@@ -1,0 +1,28 @@
+.Header {
+  display: flex;
+  justify-content: center;
+}
+
+.Header-title {
+  align-items: center;
+  display: flex;
+  margin: 20px 0;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  color: #fff;
+}
+
+.Header-logo {
+  align-items: center;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  margin-right: 10px;
+  width: 48px;
+
+  background-color: #fff;
+  border-radius: 50%;
+  color: #4285f4;
+}
