@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardIcon from '../../components/CardIcon';
+import CardIcon from 'components/CardIcon';
 
 import './styles.css';
 

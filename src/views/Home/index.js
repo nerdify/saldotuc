@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PlayStoreIcon from '../../components/PlayStoreIcon';
+import PlayStoreIcon from 'components/PlayStoreIcon';
 
 import nexus from './nexus.png';
 import './styles.css';
