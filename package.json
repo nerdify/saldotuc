@@ -1,5 +1,6 @@
 {
   "name": "saldotuc.com",
+  "homepage": "https://saldotuc.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
