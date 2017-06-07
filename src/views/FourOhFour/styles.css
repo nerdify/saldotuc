@@ -1,0 +1,18 @@
+.FourOhFour {
+  color: #fff;
+  text-align: center;
+}
+
+.FourOhFour-title {
+  margin-bottom: 0;
+
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.FourOhFour-message {
+  margin-top: 10px;
+
+  font-size: 20px;
+  font-weight: 200;
+}

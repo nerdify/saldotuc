@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.Header-title {
+.Header-link {
   align-items: center;
   display: flex;
   margin: 20px 0;
@@ -12,6 +12,7 @@
   font-weight: 500;
 
   color: #fff;
+  text-decoration: none;
 }
 
 .Header-logo {

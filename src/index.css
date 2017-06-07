@@ -7,3 +7,8 @@ body {
   color: #292b2c;
   background-color: #4285f4;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+}
