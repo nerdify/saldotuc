@@ -5,7 +5,7 @@ import AuthService from 'utils/AuthService';
 const auth = new AuthService();
 
 function fetchQuery(operation, variables) {
-  return fetch('https://saldotuc.com/__/api/graphql', {
+  return fetch('https://saldotuc.com/api/graphql', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

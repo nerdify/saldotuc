@@ -1,0 +1,7 @@
+{
+  "alias": "www.saldotuc.com",
+  "name": "www.saldotuc.com",
+  "env": {
+    "REACT_APP_SEGMENT_API_KEY": "@tuc_segment_api_key"
+  }
+}

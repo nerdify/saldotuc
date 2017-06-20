@@ -6,7 +6,7 @@ import CardList from 'components/CardList';
 
 import withAuth from  'utils/withAuth';
 
-import environment from 'createRelayEnvironment';
+import environment from 'relayEnvironment';
 
 import './styles.css';
 

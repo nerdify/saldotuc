@@ -2,19 +2,19 @@
   "rules": [
     {
       "dest": "auth.api.saldotuc.com",
-      "pathname": "/__/api/registration"
+      "pathname": "/api/registration"
     },
     {
       "dest": "auth.api.saldotuc.com",
-      "pathname": "/__/api/registration/confirm"
+      "pathname": "/api/registration/confirm"
     },
     {
       "dest": "auth.api.saldotuc.com",
-      "pathname": "/__/api/registration/verify"
+      "pathname": "/api/registration/verify"
     },
     {
       "dest": "graphql.api.saldotuc.com",
-      "pathname": "/__/api/graphql"
+      "pathname": "/api/graphql"
     },
     {
       "dest": "www.saldotuc.com"

@@ -1,0 +1,9 @@
+{
+	"alias": "graphql.api.saldotuc.com",
+	"name": "graphql.api.saldotuc.com",
+	"env": {
+		"NODE_ENV": "production",
+		"TUC_MONGODB_URI": "@tuc_mongodb_uri",
+		"TUC_SECRET": "@tuc_secret"
+	}
+}

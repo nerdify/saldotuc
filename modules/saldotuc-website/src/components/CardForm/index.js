@@ -8,7 +8,7 @@ import Button from 'components/Button';
 
 import CreateCardMutation from 'mutations/CreateCardMutation';
 
-import environment from 'createRelayEnvironment';
+import environment from 'relayEnvironment';
 
 import './styles.css';
 

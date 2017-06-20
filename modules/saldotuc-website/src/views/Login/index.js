@@ -9,7 +9,7 @@ import AuthService from 'utils/AuthService';
 
 import './styles.css';
 
-const API_URL = 'https://saldotuc.com/__/api';
+const API_URL = 'https://saldotuc.com/api/registration';
 
 class Login extends PureComponent {
   state = {
@@ -82,9 +82,8 @@ class Login extends PureComponent {
   }
 
   async register(email) {
-    const response = await fetch(`${API_URL}/registration`, {
+    const response = await fetch(`${API_URL}`, {
       method: 'POST',
-      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -120,7 +119,7 @@ class Login extends PureComponent {
         email: this.state.email,
       });
 
-      const response = await fetch(`${API_URL}/registration/verify?${query}`);
+      const response = await fetch(`${API_URL}/verify?${query}`);
 
       if (!canceled) {
         if (response.status !== 200) {
