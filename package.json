@@ -1,5 +1,4 @@
 {
-  "name": "saldotuc.com",
   "homepage": "https://saldotuc.com",
   "version": "0.1.0",
   "private": true,
@@ -11,9 +10,6 @@
     "sanitize.css": "^5.0.0"
   },
   "devDependencies": {
-    "@segment/analytics.js-core": "^3.0.0",
-    "@segment/analytics.js-integration-google-analytics": "segment-integrations/analytics.js-integration-google-analytics",
-    "@segment/analytics.js-integration-intercom": "segment-integrations/analytics.js-integration-intercom",
     "babel-plugin-relay": "^1.0.1",
     "react-scripts": "1.0.7",
     "relay-compiler": "^1.0.0"

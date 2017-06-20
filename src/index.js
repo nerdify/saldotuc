@@ -5,8 +5,6 @@ import 'sanitize.css/sanitize.css';
 
 import './index.css';
 
-import 'analytics';
-
 import App from 'App';
 
 import registerServiceWorker from './registerServiceWorker';
