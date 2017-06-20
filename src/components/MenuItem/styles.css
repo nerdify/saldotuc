@@ -1,0 +1,49 @@
+:local(.item) {
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 5px 12px;
+  width: 100%;
+
+  font-size: 14px;
+
+  background-color: transparent;
+  color: #3297d3;
+  cursor: pointer;
+  line-height: 1.6;
+  outline: none;
+  text-align: left;
+
+  //transition: background-color .08s ease-in, background-image .08s ease-in, color .08s ease-in;
+  transition-duration: .08s;
+  transition-property: background-color, background-image, color;
+  transition-timing-function: ease-in;
+}
+
+:local(.item):hover {
+  background-color: #f6f9fc;
+  color: #32325d;
+}
+
+:local(.wrapper) {
+  align-items: center;
+  display: flex;
+}
+
+:local(.wrapper) svg {
+  margin-right: 5px;
+}
+
+:local(.red) {
+  color: #e25950;
+}
+
+:local(.red):hover {
+  background-color: #fcf6f6;
+  color: #7c0e3e;
+}
+
+:local(.disabled) {
+  color: #aab7c4;
+  pointer-events: none;
+}

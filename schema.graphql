@@ -1,0 +1,133 @@
+# Represents a Card
+type Card implements Node {
+  # The ID of an object
+  id: ID!
+
+  # The balance of the card.
+  balance: Float
+
+  # Identifies the date and time when the object was created.
+  createdAt: String
+
+  # The name of the card.
+  name: String
+
+  # The number of the card.
+  number: String
+
+  # Identifies the date and time when the object was updated.
+  updatedAt: String
+}
+
+# A connection to a list of items.
+type CardConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [CardEdge]
+}
+
+# An edge in a connection.
+type CardEdge {
+  # The item at the end of the edge
+  node: Card
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input CreateCardInput {
+  # The name of card.
+  name: String!
+
+  # The number of the card.
+  number: String!
+  clientMutationId: String
+}
+
+type CreateCardPayload {
+  # The edge from the user's card connection.
+  cardEdge: CardEdge
+  clientMutationId: String
+}
+
+input DeleteCardInput {
+  # The Node ID of the card object.
+  cardId: ID!
+  clientMutationId: String
+}
+
+type DeleteCardPayload {
+  # The deleted card ID.
+  deletedCardId: ID!
+  clientMutationId: String
+}
+
+# The root query for implementing GraphQL mutations.
+type Mutation {
+  # Creates a new card.
+  createCard(input: CreateCardInput!): CreateCardPayload
+
+  # Delete a card.
+  deleteCard(input: DeleteCardInput!): DeleteCardPayload
+
+  # Update the balance of the given card.
+  updateCardBalance(input: UpdateCardBalanceInput!): UpdateCardBalancePayload
+}
+
+# An object with an ID
+interface Node {
+  # The id of the object.
+  id: ID!
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+# The query root of Saldo TUC's GraphQL interface.
+type Query {
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+  viewer: User
+}
+
+input UpdateCardBalanceInput {
+  # The Node ID of the card object.
+  cardId: ID!
+  clientMutationId: String
+}
+
+type UpdateCardBalancePayload {
+  # The updated card.
+  card: Card
+  clientMutationId: String
+}
+
+# A user is an individual's account on Saldo TUC.
+type User implements Node {
+  # The ID of an object
+  id: ID!
+
+  # The user's email.
+  email: String
+
+  # A list of cards that the user owns.
+  cards(after: String, first: Int, before: String, last: Int): CardConnection
+}
+

@@ -1,0 +1,136 @@
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  border-left: 10px solid transparent;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  position: relative;
+
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .035);
+}
+
+.card--warning {
+  border-left-color: #f8a918;
+}
+
+.card--danger {
+  border-left-color: #e35354;
+}
+
+.card__balance {
+  min-width: 64px;
+
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.card__meta {
+  bottom: 20px;
+  left: 20px;
+  position: absolute;
+}
+
+.card__meta-date,
+.card__number-label {
+  font-size: 11px;
+
+  color: #8c8c8c;
+  text-transform: uppercase;
+}
+
+.card__meta-time {
+  font-size: 14px;
+}
+
+.card__content {
+  border-left: 1px solid #f2f2f2;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.card__name {
+  margin-bottom: 30px;
+
+  font-weight: 300;
+}
+
+.card__number-number {
+  font-size: 14px;
+}
+
+.card__actions {
+  display: flex;
+
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+}
+
+.card__actions-action {
+  align-items: center;
+  border: none;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  margin-left: 15px;
+  padding: 0;
+  width: 24px;
+
+  position: relative;
+
+  border-radius: 50%;
+  color: #8898AA;
+  cursor: pointer;
+  outline: none;
+
+  transition: background-color .08s ease-in, color .08s ease-in;
+}
+
+.card:hover .card__actions-action {
+  color: #525F7F;
+}
+
+.card__actions-action:hover {
+  background-color: rgba(82, 95, 127, .1);
+}
+
+.card__actions-action--active,
+.card__actions-action--loading {
+  background-color: rgba(82, 95, 127, .1);
+  color: #525F7F;
+}
+
+.card__actions-action--loading:before {
+  border: 1px solid #8898AA;
+  border-top-color: #525F7F;
+  content: " ";
+
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  border-radius: inherit;
+
+  animation: spinner .6s linear infinite;
+}
+
+.card__popover {
+  bottom: 20px;
+  position: absolute;
+  right: 20px;
+
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(136, 152, 170, .1), 0 15px 35px 0 rgba(49, 49, 93, .1), 0 5px 15px 0 rgba(0, 0, 0, .08);
+  overflow: hidden;
+}

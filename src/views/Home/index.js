@@ -6,6 +6,14 @@ import nexus from './nexus.png';
 import './styles.css';
 
 class Home extends Component {
+  componentDidMount() {
+    document.body.classList.add('home');
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('home');
+  }
+
   render() {
     return (
       <div className="container Home">
@@ -18,12 +26,20 @@ class Home extends Component {
             {' '}
             desde cualquier lugar.
           </h2>
-          <a
-            className="Home-button"
-            href="https://play.google.com/store/apps/details?id=com.socialimprover.saldotuc"
-          >
-            <PlayStoreIcon /> <b>Google</b> play
-          </a>
+          <div className="Home-buttons">
+            <a
+              className="Home-button"
+              href="https://play.google.com/store/apps/details?id=com.socialimprover.saldotuc"
+            >
+              <PlayStoreIcon /> <b>Google</b> play
+            </a>
+            <a
+              className="Home-button"
+              href="/app"
+            >
+              <b>Web</b> app
+            </a>
+          </div>
         </div>
         <img alt="Saldo TUC" className="Home-image" src={nexus} />
       </div>

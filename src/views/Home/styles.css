@@ -36,6 +36,7 @@
 .Home-subtitle {
   margin-bottom: 30px;
 
+  font-size: 20px;
   font-weight: 300;
 
   color: #fff;
@@ -45,12 +46,16 @@
   text-decoration: none;
 }
 
+.Home-buttons {
+  display: flex;
+}
+
 .Home-button {
   align-items: center;
   display: inline-flex;
-  padding: 10px 20px;
+  padding: 10px;
 
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
 
   background-color: #fff;
@@ -58,6 +63,10 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
   color: #4285f4;
   text-decoration: none;
+}
+
+.Home-button:first-child {
+  margin-right: 20px;
 }
 
 .Home-button b {
@@ -83,5 +92,11 @@
     left: 0;
 
     transform: translateX(0);
+  }
+
+  .Home-button {
+    padding: 10px 20px;
+
+    font-size: 24px;
   }
 }

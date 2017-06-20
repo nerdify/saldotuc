@@ -1,17 +1,22 @@
 .Header {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
 }
 
 .Header-link {
   align-items: center;
   display: flex;
-  margin: 20px 0;
 
   font-size: 24px;
   font-weight: 500;
 
-  color: #fff;
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.Header-link:hover {
+  color: #4285f4;
   text-decoration: none;
 }
 
@@ -23,7 +28,16 @@
   margin-right: 10px;
   width: 48px;
 
-  background-color: #fff;
+  background-color: #4285f4;
   border-radius: 50%;
+  color: #fff;
+}
+
+.home .Header-link {
+  color: #fff;
+}
+
+.home .Header-logo {
+  background-color: #fff;
   color: #4285f4;
 }

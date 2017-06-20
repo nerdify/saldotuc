@@ -1,20 +1,36 @@
 {
   "homepage": "https://saldotuc.com",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "bowser": "1.7.0",
+    "classnames": "2.2.5",
+    "date-fns": "1.28.5",
+    "hoist-non-react-statics": "1.2.0",
+    "js-cookie": "2.1.4",
+    "prop-types": "15.5.10",
+    "query-string": "4.3.4",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-form": "1.2.8",
+    "react-motion": "0.5.0",
+    "react-onclickoutside": "6.1.1",
     "react-relay": "^1.0.0",
     "react-router-dom": "^4.1.1",
-    "sanitize.css": "^5.0.0"
+    "sanitize.css": "5.0.0",
+    "serve": "5.2.2",
+    "validator": "7.0.0"
   },
   "devDependencies": {
     "babel-plugin-relay": "^1.0.1",
+    "flow-bin": "^0.48.0",
     "react-scripts": "1.0.7",
-    "relay-compiler": "^1.0.0"
+    "relay-compiler": "^1.0.0",
+    "relay-runtime": "^1.0.0"
   },
   "scripts": {
+    "now-start": "serve -s build",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql",
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "test": "NODE_PATH=src react-scripts test --env=jsdom",

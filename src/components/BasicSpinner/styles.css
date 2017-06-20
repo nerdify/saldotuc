@@ -1,0 +1,27 @@
+@keyframes full-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+:local(.spinner) {
+  display: inline-block;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+
+  background: url("./spinner.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+
+  animation: full-rotation 1s infinite linear;
+  animation-direction: normal;
+}
+
+:local(.hidden) {
+  display: none;
+}
