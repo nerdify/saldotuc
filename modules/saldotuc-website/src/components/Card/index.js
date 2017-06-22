@@ -1,27 +1,25 @@
-import classNames from 'classnames';
-import { format, isToday, isYesterday } from 'date-fns';
 import React, { PureComponent } from 'react';
 import { createFragmentContainer, graphql } from 'react-relay';
 
 import Icon from 'components/Icon';
-import Menu from './menu';
-import MenuItem from 'components/MenuItem';
 
 import DeleteCardMutation from 'mutations/DeleteCardMutation';
 import UpdateCardBalanceMutation from 'mutations/UpdateCardBalanceMutation';
 
-import './styles.css';
+import {
+  Action,
+  ActionList,
+  Balance,
+  Circle,
+  Meta,
+  Name,
+  Number,
+  Wrapper,
+} from './style';
 
 class Card extends PureComponent {
   state = {
-    isOpen: false,
     loading: false,
-  }
-
-  toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
   }
 
   handleUpdateBalance = () => {
@@ -48,74 +46,43 @@ class Card extends PureComponent {
     )
   }
 
-  getTimeLabel() {
-    const { updatedAt } = this.props.card;
-
-    if (isToday(updatedAt)) {
-      return 'Hoy';
-    } else if (isYesterday(updatedAt)) {
-      return 'Ayer';
-    }
-
-    return format(updatedAt, 'D-M-YYYY');
-  }
-
   render() {
     const { card } = this.props;
-    const { isOpen } = this.state;
+    const { balance } = card;
 
-    const className = classNames('card', {
-      'card--warning': card.balance < 10,
-      'card--danger': card.balance === 0,
-    });
+    let color = '#7fbc3d';
+
+    if (balance === 0) {
+      color = '#f46b66';
+    } else if (balance < 10) {
+      color = '#ffbf41';
+    }
 
     return (
-      <div className={className}>
-        <div>
-          <div className="card__balance">C$ {card.balance}</div>
-          <div className="card__meta">
-            <div className="card__meta-date">{this.getTimeLabel()}</div>
-            <div className="card__meta-time">{format(card.updatedAt, 'hh:mm A')}</div>
-          </div>
-        </div>
-        <div className="card__content">
-          <div className="card__name">{card.name}</div>
-          <div className="card__number">
-            <div className="card__number-label">Número</div>
-            <div className="card__number-number">{card.number}</div>
-          </div>
-        </div>
-        <div className="card__actions">
-          <button
-            className={classNames('card__actions-action', { 'card__actions-action--loading': this.state.loading })}
-            onClick={this.handleUpdateBalance}
-          >
+      <Wrapper>
+        <Name>
+          {card.name}
+        </Name>
+        <Meta>
+          <Circle color={color} size={12} />
+          <Number>
+            {card.number}
+          </Number>
+          <Balance>
+            C$ {balance}
+          </Balance>
+        </Meta>
+        <ActionList>
+          <Action onClick={this.handleUpdateBalance}>
             <Icon name="attach_money" size={20} />
-          </button>
-          <button
-            className={classNames('card__actions-action', { 'card__actions-action--active': isOpen })}
-            onClick={this.toggle}
-          >
-            <Icon name="more_horiz" />
-          </button>
-        </div>
-
-        {isOpen && (
-          <div className="card__popover">
-            <Menu onClickOutside={this.toggle}>
-              <div className="Menu">
-                <div className="Menu-group">
-                  <div className="Menu-group-label">Acciones</div>
-                  <MenuItem color="red" onClick={this.handleDelete}>
-                    <Icon name="highlight_off" />
-                    Eliminar tarjeta
-                  </MenuItem>
-                </div>
-              </div>
-            </Menu>
-          </div>
-        )}
-      </div>
+            <div>Consultar Saldo</div>
+          </Action>
+          <Action onClick={this.handleDelete}>
+            <Icon name="highlight_off" size={20} />
+            <div>Eliminar</div>
+          </Action>
+        </ActionList>
+      </Wrapper>
     );
   }
 }
@@ -127,7 +94,6 @@ export default createFragmentContainer(Card, {
       id
       name
       number
-      updatedAt
     }
   `,
   viewer: graphql`

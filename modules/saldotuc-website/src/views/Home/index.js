@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 
 import Icon from 'components/Icon';
 
+import {
+  Button,
+  Buttons,
+  Image,
+  Intro,
+  Subtitle,
+  Title,
+  Wrapper,
+} from './style';
 import nexus from './nexus.png';
-import './styles.css';
 
 class Home extends Component {
   componentDidMount() {
@@ -16,33 +24,27 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container Home">
-        <div className="Home-intro">
-          <h1 className="Home-title">Consulta tu saldo<br />sin esfuerzo</h1>
-          <h2 className="Home-subtitle">
+      <Wrapper>
+        <Intro>
+          <Title>Consulta tu saldo<br />sin esfuerzo</Title>
+          <Subtitle>
             Consultar tus tarjetas
             <br />
             <abbr title="Transporte Urbano Colectivo">TUC</abbr>
             {' '}
             desde cualquier lugar.
-          </h2>
-          <div className="Home-buttons">
-            <a
-              className="Home-button"
-              href="https://play.google.com/store/apps/details?id=com.socialimprover.saldotuc"
-            >
+          </Subtitle>
+          <Buttons>
+            <Button href="https://play.google.com/store/apps/details?id=com.socialimprover.saldotuc">
               <Icon name="play_store" /> <b>Google</b> play
-            </a>
-            <a
-              className="Home-button"
-              href="/app"
-            >
+            </Button>
+            <Button href="/app">
               <b>Web</b> app
-            </a>
-          </div>
-        </div>
-        <img alt="Saldo TUC" className="Home-image" src={nexus} />
-      </div>
+            </Button>
+          </Buttons>
+        </Intro>
+        <Image alt="Saldo TUC" src={nexus} />
+      </Wrapper>
     );
   }
 }

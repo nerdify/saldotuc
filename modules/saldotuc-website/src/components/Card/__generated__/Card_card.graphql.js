@@ -3,7 +3,7 @@
  *   relay-compiler
  *
  * @providesModule Card_card.graphql
- * @generated SignedSource<<72c0165262a8cc4740a6133d1bc13d0f>>
+ * @generated SignedSource<<ef0875ab6e077efd6bcf2d6b29e07404>>
  * @flow
  * @nogrep
  */
@@ -19,7 +19,6 @@ export type Card_card = {|
   +id: string;
   +name: ?string;
   +number: ?string;
-  +updatedAt: ?string;
 |};
 */
 
@@ -56,13 +55,6 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "number",
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "args": null,
-      "name": "updatedAt",
       "storageKey": null
     }
   ],

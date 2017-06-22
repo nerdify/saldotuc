@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "bowser": "1.7.0",
-    "classnames": "2.2.5",
-    "date-fns": "1.28.5",
     "hoist-non-react-statics": "1.2.0",
     "js-cookie": "2.1.4",
     "prop-types": "15.5.10",
@@ -20,12 +18,12 @@
     "react-dom": "15.6.1",
     "react-form": "1.2.8",
     "react-motion": "0.5.0",
-    "react-onclickoutside": "6.1.1",
     "react-relay": "1.0.0",
     "react-router-dom": "4.1.1",
     "sanitize.css": "5.0.0",
-    "serve": "5.2.3",
-    "validator": "7.0.0"
+    "serve": "5.2.4",
+    "styled-components": "2.1.0",
+    "validator": "7.1.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.1",

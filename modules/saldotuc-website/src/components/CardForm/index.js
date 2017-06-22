@@ -1,17 +1,21 @@
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { Form, Text } from 'react-form';
+import { Form as ReactForm } from 'react-form';
 import { Motion, presets, spring } from 'react-motion';
 
-import Button from 'components/Button';
 import Icon from 'components/Icon';
 
 import CreateCardMutation from 'mutations/CreateCardMutation';
 
 import environment from 'relayEnvironment';
 
-import './styles.css';
+import {
+  Button,
+  Form,
+  IconButton,
+  Input,
+  WrapperHidden,
+} from './style';
 
 class CardForm extends PureComponent {
   static propTypes = {
@@ -23,15 +27,16 @@ class CardForm extends PureComponent {
     loading: false,
   }
 
-  handleExpand = () => {
-    if (this.state.expanded) {
-      this.form.resetForm();
+  handleClose = (e) => {
+    e.preventDefault();
 
-      this.setState({
+    if (this.state.expanded) {
+      this.setState(() => ({
         expanded: false,
-      });
-    } else {
-      // this.name.focus();
+        loading: false,
+      }));
+
+      this.form.resetForm();
     }
   }
 
@@ -62,11 +67,12 @@ class CardForm extends PureComponent {
     };
 
     const onCompleted = () => {
-      this.handleExpand();
-
-      this.setState({
+      this.setState(() => ({
+        expanded: false,
         loading: false,
-      });
+      }));
+
+      this.form.resetForm();
     }
 
     CreateCardMutation.commit(
@@ -74,8 +80,8 @@ class CardForm extends PureComponent {
       this.props.viewer,
       data.name,
       data.number,
-      onError,
-      onCompleted
+      onCompleted,
+      onError
     );
   }
 
@@ -96,7 +102,7 @@ class CardForm extends PureComponent {
         height: spring(56, { stiffness: 300 }),
         padding: spring(16, { stiffness: 300 }),
         rotate: spring(135, presets.stiff),
-        translateX: spring(504, { stiffness: 300 }),
+        translateX: spring(514, { stiffness: 300 }),
       };
     }
 
@@ -124,8 +130,10 @@ class CardForm extends PureComponent {
   }
 
   render() {
+    const { expanded } = this.state;
+
     return (
-      <Form
+      <ReactForm
         onSubmit={this.onSubmit}
         ref={ref => (this.form = ref)}
         validate={this.validate}
@@ -137,34 +145,31 @@ class CardForm extends PureComponent {
           >
             {({ height, padding, rotate, scale, translateX }) => {
               return (
-                <form
-                  className={classNames('CardForm', { 'CardForm--expanded': this.state.expanded })}
+                <Form
+                  expanded={expanded}
                   onSubmit={submitForm}
                   style={{ transform: `scale(${scale})` }}
                 >
-                  <span
-                    className="CardForm-icon"
-                    onClick={this.handleExpand}
+                  <IconButton
+                    onClick={this.handleClose}
                     style={{ transform: `translateX(${translateX}px) rotate(${rotate}deg)` }}
                   >
                     <Icon name="add" size={32} />
-                  </span>
-                  <Text
+                  </IconButton>
+                  <Input
                     required
                     autoComplete="off"
-                    className="CardForm-input"
                     field="name"
                     name="name"
                     onFocus={this.handleFocus}
-                    placeholder={this.state.expanded ? 'Nombre' : 'Agregar nueva tarjeta'}
+                    placeholder={expanded ? 'Nombre' : 'Agregar nueva tarjeta'}
                     style={{ paddingLeft: padding }}
                     type="text"
                   />
-                  <div className="CardForm-hidden" style={{ height }}>
-                    <Text
+                  <WrapperHidden style={{ height }}>
+                    <Input
                       required
                       autoComplete="off"
-                      className="CardForm-input"
                       field="number"
                       name="number"
                       minLength="8"
@@ -173,19 +178,18 @@ class CardForm extends PureComponent {
                       type="text"
                     />
                     <Button
-                      className={classNames('CardForm-button', { 'CardForm-button--active': !errors })}
                       disabled={!!errors}
                       waiting={this.state.loading}
                     >
                       Guardar
                     </Button>
-                  </div>
-                </form>
+                  </WrapperHidden>
+                </Form>
               );
             }}
           </Motion>
         }
-      </Form>
+      </ReactForm>
     );
   }
 }

@@ -1,15 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './styles.css';
+import Container from 'components/Container';
+import H1 from 'components/H1';
+
+const Wrapper = styled(Container)`
+  max-width: 720px;
+  
+  text-align: center;
+  
+  p {
+    font-size: 14px;
+  }
+`;
 
 function EmailConfirmed() {
   return (
-    <div className="page-content">
-      <div className="EmailConfirmed">
-        <h1 className="EmailConfirmed-title">Dirección de correo electrónico confirmada.</h1>
-        <p className="EmailConfirmed-description">Has sido correctamente autenticado. ¡Ahora puedes cerrar esta ventana!</p>
-      </div>
-    </div>
+    <Wrapper>
+      <H1>Dirección de correo electrónico confirmada.</H1>
+      <p>Has sido correctamente autenticado. ¡Ahora puedes cerrar esta ventana!</p>
+    </Wrapper>
   )
 }
 

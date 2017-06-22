@@ -2,8 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import 'sanitize.css/sanitize.css';
-
-import './index.css';
+import './style';
 
 import App from 'App';
 

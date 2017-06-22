@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule CreateCardMutation.graphql
- * @generated SignedSource<<5f231d3d72362b8836a0dd57085b06ed>>
- * @relayHash c45b279e53d35722d6793792e45f9d70
+ * @generated SignedSource<<846042342763aef2a25287a2ab57122e>>
+ * @relayHash 68a4c6f79caa6323ae4fbfd95ef1c446
  * @flow
  * @nogrep
  */
@@ -29,7 +29,6 @@ export type CreateCardMutationResponse_cardEdge_node = {
   id: string;
   name?: ?string;
   number?: ?string;
-  updatedAt?: ?string;
 };
 
 export type CreateCardMutationResponse_cardEdge = {
@@ -51,7 +50,6 @@ mutation CreateCardMutation(
         id
         name
         number
-        updatedAt
       }
     }
   }
@@ -136,13 +134,6 @@ const batch /*: ConcreteBatch*/ = {
                     "alias": null,
                     "args": null,
                     "name": "number",
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "updatedAt",
                     "storageKey": null
                   }
                 ],
@@ -239,13 +230,6 @@ const batch /*: ConcreteBatch*/ = {
                     "args": null,
                     "name": "number",
                     "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "updatedAt",
-                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -258,7 +242,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation CreateCardMutation(\n  $input: CreateCardInput!\n) {\n  createCard(input: $input) {\n    cardEdge {\n      cursor\n      node {\n        balance\n        id\n        name\n        number\n        updatedAt\n      }\n    }\n  }\n}\n"
+  "text": "mutation CreateCardMutation(\n  $input: CreateCardInput!\n) {\n  createCard(input: $input) {\n    cardEdge {\n      cursor\n      node {\n        balance\n        id\n        name\n        number\n      }\n    }\n  }\n}\n"
 };
 
 module.exports = batch;

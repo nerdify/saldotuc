@@ -1,10 +1,9 @@
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
-import BasicSpinner from 'components/BasicSpinner';
+import Spinner from 'components/Spinner';
 
-import styles from './styles.css';
+import { Button as StyledButton, Indicator, Text } from './style';
 
 class Button extends PureComponent {
   static propTypes = {
@@ -31,23 +30,20 @@ class Button extends PureComponent {
 
     if (waiting) {
       spinner = (
-        <div className={styles.indicator}>
-          <BasicSpinner size={24} />
-        </div>
+        <Indicator>
+          <Spinner size={24} />
+        </Indicator>
       );
     }
 
-    const buttonClassName = classNames(className, styles.button);
-    const textClassName = classNames(waiting ? styles.text : false);
-
     return (
-      <button
-        className={buttonClassName}
+      <StyledButton
+        className={className}
         {...rest}
       >
-        <span className={textClassName}>{children}</span>
+        <Text waiting={waiting}>{children}</Text>
         {spinner}
-      </button>
+      </StyledButton>
     );
   }
 }

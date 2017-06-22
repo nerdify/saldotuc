@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule AppQuery.graphql
- * @generated SignedSource<<a20be0abc490671dfa4becc167ac0058>>
- * @relayHash 72219bb704fbecbb73045dadc9544bc3
+ * @generated SignedSource<<c33090c8afa03a9a1c96bce4e93a2dfa>>
+ * @relayHash d57a0e1ca2d8dae346f92500601d8d4b
  * @flow
  * @nogrep
  */
@@ -56,7 +56,6 @@ fragment Card_card on Card {
   id
   name
   number
-  updatedAt
 }
 */
 
@@ -181,13 +180,6 @@ const batch /*: ConcreteBatch*/ = {
                         "kind": "ScalarField",
                         "alias": null,
                         "args": null,
-                        "name": "updatedAt",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
                         "name": "__typename",
                         "storageKey": null
                       }
@@ -267,7 +259,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppQuery {\n  viewer {\n    id\n    ...CardList_viewer\n  }\n}\n\nfragment CardList_viewer on User {\n  ...Card_viewer\n  cards(first: 2147483647) {\n    edges {\n      node {\n        id\n        ...Card_card\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Card_viewer on User {\n  id\n}\n\nfragment Card_card on Card {\n  balance\n  id\n  name\n  number\n  updatedAt\n}\n"
+  "text": "query AppQuery {\n  viewer {\n    id\n    ...CardList_viewer\n  }\n}\n\nfragment CardList_viewer on User {\n  ...Card_viewer\n  cards(first: 2147483647) {\n    edges {\n      node {\n        id\n        ...Card_card\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Card_viewer on User {\n  id\n}\n\nfragment Card_card on Card {\n  balance\n  id\n  name\n  number\n}\n"
 };
 
 module.exports = batch;

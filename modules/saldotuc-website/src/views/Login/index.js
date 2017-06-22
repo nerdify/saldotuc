@@ -1,13 +1,17 @@
 import bowser from 'bowser';
-import classNames from 'classnames';
 import queryString from 'query-string';
 import React, { PureComponent } from 'react';
-import { Form, Text } from 'react-form';
+import { Form as ReactForm } from 'react-form';
 import isEmail from 'validator/lib/isEmail';
 
 import AuthService from 'utils/AuthService';
 
-import './styles.css';
+import {
+  Description,
+  Input,
+  Title,
+  Wrapper,
+} from './style';
 
 const API_URL = 'https://saldotuc.com/api/registration';
 
@@ -154,25 +158,25 @@ class Login extends PureComponent {
   renderForm() {
     return (
       <div>
-        <div className="Login-description">
+        <Description>
           <p>
             Ingresa tu correo electrónico para continuar.
             <br />
             Si no tienes una cuenta, crearemos una.
           </p>
-        </div>
+        </Description>
 
-        <Form
+        <ReactForm
           ref={(ref) => (this.form = ref)}
           onSubmit={this.onSubmit}
           validate={this.validate}
         >
           {({ submitForm }) =>
             <form onSubmit={submitForm}>
-              <Text
+              <Input
                 autoFocus
                 errorBefore
-                className={classNames('Login-input', { 'Login-input--loading': this.state.loading })}
+                data-loading={this.state.loading}
                 field="email"
                 onChange={this.onEmail}
                 placeholder="tu@correo.com"
@@ -180,7 +184,7 @@ class Login extends PureComponent {
               />
             </form>
           }
-        </Form>
+        </ReactForm>
       </div>
     )
   }
@@ -189,7 +193,7 @@ class Login extends PureComponent {
     const { email, securityCode } = this.state;
 
     return (
-      <div className="Login-description">
+      <Description>
         <p>
           Enviamos un correo electrónico a <strong>{email}</strong> <a href="" onClick={this.onCancel}>(Cancelar)</a>.
         </p>
@@ -198,7 +202,7 @@ class Login extends PureComponent {
           proporcionado coincida con <strong>{securityCode}</strong> y sigue el enlace.
         </p>
         <p>Esperando tu confirmación...</p>
-      </div>
+      </Description>
     );
   }
 
@@ -218,15 +222,13 @@ class Login extends PureComponent {
     const { success } = this.state;
 
     return (
-      <div className="page-content">
-        <div className="Login">
-          <h1 className="Login-title">
-            {success ? 'Iniciando sesión' : 'Inicia sesión'}
-          </h1>
+      <Wrapper>
+        <Title>
+          {success ? 'Iniciando sesión' : 'Inicia sesión'}
+        </Title>
 
-          {success ? this.renderSuccess() : this.renderForm()}
-        </div>
-      </div>
+        {success ? this.renderSuccess() : this.renderForm()}
+      </Wrapper>
     );
   }
 }

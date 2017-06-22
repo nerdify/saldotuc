@@ -11,7 +11,6 @@ const mutation = graphql`
           id
           name
           number
-          updatedAt
         }
       }
     }
@@ -20,13 +19,13 @@ const mutation = graphql`
 
 let tempID = 0;
 
-function commit(environment, user, name, number, onError, onCompleted) {
+function commit(environment, user, name, number, onCompleted, onError) {
   return commitMutation(
     environment,
     {
       mutation,
-      onError,
       onCompleted,
+      onError,
       variables: {
         input: {
           name,

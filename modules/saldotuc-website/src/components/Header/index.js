@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Icon from 'components/Icon';
 
-import './styles.css';
+import { Link, Logo, Wrapper } from './style';
 
-function Header(props) {
+function Header() {
   return (
-    <header className="container Header">
-      <Link className="Header-link" to="/">
-        <div className="Header-logo">
+    <Wrapper>
+      <Link to="/">
+        <Logo>
           <Icon name="credit_card" />
-        </div>
+        </Logo>
         Saldo TUC
       </Link>
-    </header>
+    </Wrapper>
   );
 }
 
