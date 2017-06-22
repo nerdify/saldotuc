@@ -19,14 +19,12 @@ function fetchQuery(operation, variables) {
   }).then((response) => {
     return response.json();
   }).then((json) => {
-    const { errors } = json;
-
-    if (errors) {
-      // make sure relay treats this as an error
-      return { errors, data: null };
+    // https://github.com/facebook/relay/issues/1816
+    if (operation.query.operation === 'mutation' && json.errors) {
+      return Promise.reject(json.errors);
     }
 
-    return json;
+    return Promise.resolve(json);
   });
 }
 

@@ -48,7 +48,7 @@ class CardForm extends PureComponent {
     const onError = (response) => {
       this.form.setFormState(Object.assign({}, this.form.state, {
         errors: {
-          number: response.source.errors[0].message,
+          number: response[0].message,
         },
         touched: {
           number: true,
