@@ -2,17 +2,18 @@
   "name": "saldotuc-graphql",
   "private": true,
   "scripts": {
-    "start": "micro"
+    "now-start": "micro",
+    "start": "nodemon --exec 'npm run now-start -- -p 5000'"
   },
   "dependencies": {
     "dotenv": "4.0.0",
     "express-graphql": "0.6.6",
     "got": "7.0.0",
-    "graphql": "0.10.1",
+    "graphql": "0.10.3",
     "graphql-relay": "0.5.2",
     "micro": "7.3.3",
     "micro-jwt-auth": "1.6.0",
-    "mongoose": "4.10.7"
+    "mongoose": "4.10.8"
   },
   "devDependencies": {
     "xo": "0.18.2"

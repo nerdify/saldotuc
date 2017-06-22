@@ -2,16 +2,18 @@
   "name": "saldotuc-registration",
   "private": true,
   "scripts": {
-    "start": "micro"
+    "now-start": "micro",
+    "start": "nodemon --exec 'npm run now-start -- -p 4000'"
   },
   "dependencies": {
     "cookies": "0.7.0",
+    "dotenv": "4.0.0",
     "jsonwebtoken": "7.4.1",
     "micro": "7.3.3",
     "micro-query": "0.1.0",
     "micro-redirect": "1.0.0",
     "microrouter": "2.1.1",
-    "mongoose": "4.10.7",
+    "mongoose": "4.10.8",
     "sparkpost": "2.1.2",
     "uid-promise": "1.0.0"
   },

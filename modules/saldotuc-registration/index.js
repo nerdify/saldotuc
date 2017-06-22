@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const {get, post, router} = require('microrouter');
 
 module.exports = router(
