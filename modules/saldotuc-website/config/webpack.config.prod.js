@@ -12,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const SvgPrepPlugin = require('./plugins/svg-prep');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -219,6 +220,11 @@ module.exports = {
     ],
   },
   plugins: [
+    // Generates an `sprite.svg` file with all the icons.
+    new SvgPrepPlugin({
+      source: path.join(paths.appSrc, 'icons'),
+      output: 'static/media/sprites.svg',
+    }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">

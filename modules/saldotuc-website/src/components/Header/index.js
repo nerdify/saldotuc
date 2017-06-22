@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CardIcon from 'components/CardIcon';
+import Icon from 'components/Icon';
 
 import './styles.css';
 
@@ -10,7 +10,7 @@ function Header(props) {
     <header className="container Header">
       <Link className="Header-link" to="/">
         <div className="Header-logo">
-          <CardIcon />
+          <Icon name="credit_card" />
         </div>
         Saldo TUC
       </Link>

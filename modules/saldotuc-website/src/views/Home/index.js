@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PlayStoreIcon from 'components/PlayStoreIcon';
+import Icon from 'components/Icon';
 
 import nexus from './nexus.png';
 import './styles.css';
@@ -31,7 +31,7 @@ class Home extends Component {
               className="Home-button"
               href="https://play.google.com/store/apps/details?id=com.socialimprover.saldotuc"
             >
-              <PlayStoreIcon /> <b>Google</b> play
+              <Icon name="play_store" /> <b>Google</b> play
             </a>
             <a
               className="Home-button"

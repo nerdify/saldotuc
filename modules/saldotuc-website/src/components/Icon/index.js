@@ -10,7 +10,7 @@ function Icon(props) {
 
   return (
     <svg {...attributes}>
-      <use xlinkHref={`/static/sprites.svg#${name}`} />
+      <use xlinkHref={`/static/media/sprites.svg#${name}`} />
     </svg>
   );
 }
