@@ -10,6 +10,7 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/icons/icon-512x512.png">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -21,6 +22,15 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Saldo TUC</title>
+
+    <meta property="fb:app_id" content="1970980939840841">
+
+    <meta property="og:description" content="Saldo TUC te permite consultar el saldo de tarjetas de transporte urbano colectivo (TUC) de Nicaragua.">
+    <meta property="og:image" content="%PUBLIC_URL%/images/logo_facebook.png">
+    <meta property="og:site_name" content="Saldo TUC">
+    <meta property="og:title" content="Consultar tus tarjetas TUC desde cualquier lugar">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="%PUBLIC_URL%">
 
     <script>
       if ('%NODE_ENV%' === 'production') {

@@ -2,6 +2,7 @@
   "alias": "www.saldotuc.com",
   "name": "www.saldotuc.com",
   "env": {
+    "PUBLIC_URL": "https://saldotuc.com",
     "REACT_APP_SEGMENT_API_KEY": "@tuc_segment_api_key"
   }
 }
