@@ -1,4 +1,5 @@
 import bowser from 'bowser';
+import Cookies from 'js-cookie';
 import queryString from 'query-string';
 import React, { PureComponent } from 'react';
 import { Form as ReactForm } from 'react-form';
@@ -56,7 +57,12 @@ class Login extends PureComponent {
 
         const data = await this.waitForVerification(token);
 
-        if (data && data.ok) {
+        if (data) {
+          Cookies.set('token', data.token, {
+            secure: window.document.protocol === 'https',
+            expires: 365,
+          });
+
           this.redirect();
         }
       }
@@ -130,7 +136,7 @@ class Login extends PureComponent {
           return this.waitForVerification(token);
         }
 
-        return response;
+        return response.json();
       }
     }
   }
