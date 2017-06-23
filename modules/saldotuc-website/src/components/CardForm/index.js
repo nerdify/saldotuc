@@ -47,6 +47,8 @@ class CardForm extends PureComponent {
   }
 
   onSubmit = (data) => {
+    const { name, number } = data;
+
     this.setState({
       loading: true,
     });
@@ -73,13 +75,15 @@ class CardForm extends PureComponent {
       }));
 
       this.form.resetForm();
+
+      analytics.track('Card Created', { name, number });
     }
 
     CreateCardMutation.commit(
       environment,
       this.props.viewer,
-      data.name,
-      data.number,
+      name,
+      number,
       onCompleted,
       onError
     );

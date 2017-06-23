@@ -1,4 +1,3 @@
-import { Link as BaseLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Container from 'components/Container';
@@ -9,7 +8,7 @@ export const Wrapper = Container.withComponent('Header').extend`
   padding: 20px 0;
 `;
 
-export const Link = styled(BaseLink)`
+export const Link = styled.a`
   align-items: center;
   display: flex;
 

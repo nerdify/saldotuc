@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Button from 'components/Button';
+
 export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 5px;
@@ -23,7 +25,7 @@ export const Circle = styled.span`
   height: 16px;
   height: ${props => props.size || 16}px;
   width: ${props => props.size || 16}px;
-  
+
   background-color: ${props => props.color || '#4285f4'};
   border-radius: 50%;
 `;
@@ -34,7 +36,7 @@ export const Number = styled.div`
 
 export const Balance = styled.div`
   margin-left: auto;
-  
+
   color: #54545e; // #94949e
 `;
 
@@ -44,13 +46,13 @@ export const ActionList = styled.div`
   justify-content: space-around;
 `;
 
-export const Action = styled.button`
+export const Action = styled(Button)`
   border: none;
   padding: 4px 0;
-  
+
   font-size: 11px;
   font-size: 12px;
-  
+
   color: #474c62;
   cursor: pointer;
   outline: none;

@@ -18,6 +18,7 @@ function App() {
       query={graphql`
         query AppQuery {
           viewer {
+            email
             id
             ...CardList_viewer
           }
@@ -25,13 +26,19 @@ function App() {
       `}
       render={({ props }) => {
         if (props) {
+          const { viewer } = props;
+
+          analytics.identify(viewer.id, {
+            email: viewer.email,
+          });
+
           return (
             <Container>
               <Title>Tarjetas</Title>
 
-              <CardForm viewer={props.viewer}/>
+              <CardForm viewer={viewer}/>
 
-              <CardList viewer={props.viewer}/>
+              <CardList viewer={viewer}/>
             </Container>
           );
         }

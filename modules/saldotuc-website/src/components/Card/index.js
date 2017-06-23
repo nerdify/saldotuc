@@ -23,26 +23,41 @@ class Card extends PureComponent {
   }
 
   handleUpdateBalance = () => {
+    const { card } = this.props;
+
     this.setState({
       loading: true,
     });
 
     UpdateCardBalanceMutation.commit(
       this.props.relay.environment,
-      this.props.card,
+      card,
       () => {
         this.setState({
           loading: false,
+        });
+
+        analytics.track('Card Balance Checked', {
+          name: card.name,
+          number: card.number,
         });
       }
     );
   }
 
   handleDelete = () => {
+    const { card } = this.props;
+
     DeleteCardMutation.commit(
       this.props.relay.environment,
       this.props.viewer,
-      this.props.card
+      card,
+      () => {
+        analytics.track('Card Deleted', {
+          name: card.name,
+          number: card.number,
+        });
+      }
     )
   }
 
@@ -73,7 +88,7 @@ class Card extends PureComponent {
           </Balance>
         </Meta>
         <ActionList>
-          <Action onClick={this.handleUpdateBalance}>
+          <Action onClick={this.handleUpdateBalance} waiting={this.state.loading}>
             <Icon name="attach_money" size={20} />
             <div>Consultar Saldo</div>
           </Action>

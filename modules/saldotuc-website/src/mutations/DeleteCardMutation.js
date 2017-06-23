@@ -16,11 +16,12 @@ function sharedUpdater(store, user, deletedID) {
   ConnectionHandler.deleteNode(conn, deletedID);
 }
 
-function commit(environment, user, card) {
+function commit(environment, user, card, onCompleted) {
   return commitMutation(
     environment,
     {
       mutation,
+      onCompleted,
       variables: {
         input: {
           cardId: card.id,

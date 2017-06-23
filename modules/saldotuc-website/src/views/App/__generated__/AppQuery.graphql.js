@@ -3,8 +3,8 @@
  *   relay-compiler
  *
  * @providesModule AppQuery.graphql
- * @generated SignedSource<<c33090c8afa03a9a1c96bce4e93a2dfa>>
- * @relayHash d57a0e1ca2d8dae346f92500601d8d4b
+ * @generated SignedSource<<29947fd1ca151a77aa4a71627c368cd9>>
+ * @relayHash c1db9294ca89b144ec7d639e9d656eb8
  * @flow
  * @nogrep
  */
@@ -22,6 +22,7 @@ import type {ConcreteBatch} from 'relay-runtime';
 /*
 query AppQuery {
   viewer {
+    email
     id
     ...CardList_viewer
   }
@@ -78,6 +79,13 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "ScalarField",
             "alias": null,
             "args": null,
+            "name": "email",
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
             "name": "id",
             "storageKey": null
           },
@@ -110,6 +118,13 @@ const batch /*: ConcreteBatch*/ = {
         "name": "viewer",
         "plural": false,
         "selections": [
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "args": null,
+            "name": "email",
+            "storageKey": null
+          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -259,7 +274,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppQuery {\n  viewer {\n    id\n    ...CardList_viewer\n  }\n}\n\nfragment CardList_viewer on User {\n  ...Card_viewer\n  cards(first: 2147483647) {\n    edges {\n      node {\n        id\n        ...Card_card\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Card_viewer on User {\n  id\n}\n\nfragment Card_card on Card {\n  balance\n  id\n  name\n  number\n}\n"
+  "text": "query AppQuery {\n  viewer {\n    email\n    id\n    ...CardList_viewer\n  }\n}\n\nfragment CardList_viewer on User {\n  ...Card_viewer\n  cards(first: 2147483647) {\n    edges {\n      node {\n        id\n        ...Card_card\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n\nfragment Card_viewer on User {\n  id\n}\n\nfragment Card_card on Card {\n  balance\n  id\n  name\n  number\n}\n"
 };
 
 module.exports = batch;

@@ -15,7 +15,7 @@ function Header(props) {
 
   return (
     <Wrapper>
-      <Link to="/">
+      <Link href="/">
         <Logo>
           <Icon name="credit_card" />
         </Logo>
