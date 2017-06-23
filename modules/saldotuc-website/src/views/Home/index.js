@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Icon from 'components/Icon';
 
@@ -13,7 +13,7 @@ import {
 } from './style';
 import nexus from './nexus.png';
 
-class Home extends Component {
+class Home extends PureComponent {
   componentDidMount() {
     document.body.classList.add('home');
   }

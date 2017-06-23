@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Container from 'components/Container';
 import H1 from 'components/H1';
 
-export const Wrapper = styled(Container)`
+export const Wrapper = Container.extend`
   color: #fff;
   text-align: center;
 `;
 
-export const Title = styled(H1)`
+export const Title = H1.extend`
   margin-bottom: 0;
 
   font-size: 48px;

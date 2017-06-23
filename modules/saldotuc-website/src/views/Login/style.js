@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled(H1)`
+export const Title = H1.extend`
   text-align: center;
 `;
 

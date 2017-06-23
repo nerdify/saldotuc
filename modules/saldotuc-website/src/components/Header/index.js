@@ -1,10 +1,18 @@
+import queryString from 'query-string';
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Icon from 'components/Icon';
 
 import { Link, Logo, Wrapper } from './style';
 
-function Header() {
+function Header(props) {
+  const query = queryString.parse(props.location.search);
+
+  if (query && query.ref === 'facebook-page-tab') {
+    return null;
+  }
+
   return (
     <Wrapper>
       <Link to="/">
@@ -17,4 +25,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);

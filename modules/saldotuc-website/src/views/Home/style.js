@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Container from 'components/Container';
 import H1 from 'components/H1';
 
-export const Wrapper = styled(Container)`
+export const Wrapper = Container.extend`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ export const Intro = styled.div`
   }
 `;
 
-export const Title = styled(H1)`
+export const Title = H1.extend`
   margin-bottom: 30px;
 
   position: relative;

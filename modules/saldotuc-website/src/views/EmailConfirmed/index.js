@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Container from 'components/Container';
 import H1 from 'components/H1';
 
-const Wrapper = styled(Container)`
+const Wrapper = Container.extend`
   max-width: 720px;
   
   text-align: center;
