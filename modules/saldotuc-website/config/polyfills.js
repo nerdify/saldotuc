@@ -17,3 +17,7 @@ Object.assign = require('object-assign');
 
 // ES6 `String.prototype.startsWith` polyfill
 require('string.prototype.startswith');
+
+require('core-js/es6/array');
+require('core-js/es6/map');
+require('core-js/es6/set');
