@@ -18,6 +18,10 @@ Object.assign = require('object-assign');
 // ES6 `String.prototype.startsWith` polyfill
 require('string.prototype.startswith');
 
+// react-relay requires Map, Set, Promise, Object.assign, and Array#find.
 require('core-js/es6/array');
 require('core-js/es6/map');
 require('core-js/es6/set');
+
+// Old browser support for Object.defineProperty
+require('core-js/modules/es6.object.define-property');
