@@ -35,11 +35,8 @@ export const Form = styled.form`
 export const IconButton = styled.button.attrs({
   type: 'button'
 })`
-  align-items: center;
   border: none;
-  display: flex;
   height: 56px;
-  justify-content: center;
   width: 56px;
 
   left: 0;

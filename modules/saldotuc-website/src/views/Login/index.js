@@ -2,14 +2,13 @@ import bowser from 'bowser';
 import Cookies from 'js-cookie';
 import queryString from 'query-string';
 import React, { PureComponent } from 'react';
-import { Form as ReactForm } from 'react-form';
-import isEmail from 'validator/lib/isEmail';
+
+import LoginForm from 'components/LoginForm';
 
 import AuthService from 'utils/AuthService';
 
 import {
   Description,
-  Input,
   Title,
   Wrapper,
 } from './style';
@@ -19,6 +18,7 @@ const API_URL = 'https://saldotuc.com/api/registration';
 class Login extends PureComponent {
   state = {
     email: null,
+    errorMessage: null,
     loading: false,
     success: false,
     securityCode: null,
@@ -26,27 +26,20 @@ class Login extends PureComponent {
 
   cancels = []
 
-  form
-
-  onEmail = (e, onChange) => {
-    const email = e.target.value;
-
-    onChange(email);
-
-    this.setState(() => ({ email }));
-  }
-
-  onSubmit = async (data) => {
+  onSubmit = async (email) => {
     let canceled = false;
 
-    this.setState({ loading: true });
+    this.setState({
+      email,
+      loading: true,
+    });
 
     this.cancels.push(() => {
       canceled = true;
     });
 
     try {
-      const { securityCode, token } = await this.register(data.email);
+      const { securityCode, token } = await this.register(email);
 
       if (!canceled) {
         this.setState({
@@ -67,16 +60,10 @@ class Login extends PureComponent {
         }
       }
     } catch (err) {
-      this.setState({ loading: false });
-
-      this.form.setFormState(Object.assign({}, this.form.state, {
-        errors: {
-          email: err.message,
-        },
-        touched: {
-          email: true,
-        },
-      }));
+      this.setState({
+        errorMessage: err.message,
+        loading: false,
+      });
     }
   }
 
@@ -155,12 +142,6 @@ class Login extends PureComponent {
     window.location = '/app';
   }
 
-  validate(values) {
-    return {
-      email: isEmail(values.email || '') ? undefined : 'Email inválido',
-    }
-  }
-
   renderForm() {
     return (
       <div>
@@ -172,25 +153,11 @@ class Login extends PureComponent {
           </p>
         </Description>
 
-        <ReactForm
-          ref={(ref) => (this.form = ref)}
+        <LoginForm
+          errorMessage={this.state.errorMessage}
+          loading={this.state.loading}
           onSubmit={this.onSubmit}
-          validate={this.validate}
-        >
-          {({ submitForm }) =>
-            <form onSubmit={submitForm}>
-              <Input
-                autoFocus
-                errorBefore
-                data-loading={this.state.loading}
-                field="email"
-                onChange={this.onEmail}
-                placeholder="tu@correo.com"
-                type="email"
-              />
-            </form>
-          }
-        </ReactForm>
+        />
       </div>
     )
   }

@@ -179,7 +179,7 @@ class CardForm extends PureComponent {
                       minLength="8"
                       maxLength="8"
                       placeholder="Número"
-                      type="text"
+                      type="number"
                     />
                     <Button
                       disabled={!!errors}
