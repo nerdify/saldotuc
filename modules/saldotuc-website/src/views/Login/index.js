@@ -1,4 +1,3 @@
-import bowser from 'bowser';
 import Cookies from 'js-cookie';
 import queryString from 'query-string';
 import React, { PureComponent } from 'react';
@@ -84,10 +83,7 @@ class Login extends PureComponent {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        email,
-        tokenName: `Website (${bowser.name})`,
-      }),
+      body: JSON.stringify({ email }),
     });
 
     if (response.status !== 200) {

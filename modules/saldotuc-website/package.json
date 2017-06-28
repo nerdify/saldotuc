@@ -9,7 +9,6 @@
     "test": "NODE_PATH=src node scripts/test.js --env=jsdom"
   },
   "dependencies": {
-    "bowser": "1.7.0",
     "hoist-non-react-statics": "1.2.0",
     "js-cookie": "2.1.4",
     "query-string": "4.3.4",
