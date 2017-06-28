@@ -2,6 +2,11 @@ require('dotenv').config();
 
 const graphqlHTTP = require('express-graphql');
 const jwtAuth = require('micro-jwt-auth');
+const Raven = require('raven');
+
+if (process.env.NODE_ENV === 'production') {
+	Raven.config(process.env.TUC_SENTRY_DSN).install();
+}
 
 const schema = require('./schema');
 const User = require('./models/user');

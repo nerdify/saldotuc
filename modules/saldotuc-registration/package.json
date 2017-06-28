@@ -13,6 +13,7 @@
     "micro-redirect": "1.0.0",
     "microrouter": "2.1.1",
     "mongoose": "4.10.8",
+    "raven": "2.1.0",
     "sparkpost": "2.1.2",
     "uid-promise": "1.0.0"
   },
