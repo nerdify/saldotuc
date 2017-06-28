@@ -6,7 +6,6 @@ const mutation = graphql`
       card {
         balance
         id
-        updatedAt
       }
     }
   }

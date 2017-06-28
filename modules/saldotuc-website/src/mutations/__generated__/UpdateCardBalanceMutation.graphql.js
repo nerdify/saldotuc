@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d4153bd7da7fa77137ca5a504abc9e8d
+ * @relayHash 064d993be1cc33fdf89ee1eadfc99108
  */
 
 /* eslint-disable */
@@ -21,7 +21,6 @@ export type UpdateCardBalanceMutationResponse = {|
     +card: ?{|
       +balance: ?number;
       +id: string;
-      +updatedAt: ?string;
     |};
   |};
 |};
@@ -36,7 +35,6 @@ mutation UpdateCardBalanceMutation(
     card {
       balance
       id
-      updatedAt
     }
   }
 }
@@ -91,13 +89,6 @@ const batch /*: ConcreteBatch*/ = {
                 "alias": null,
                 "args": null,
                 "name": "id",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "updatedAt",
                 "storageKey": null
               }
             ],
@@ -162,13 +153,6 @@ const batch /*: ConcreteBatch*/ = {
                 "args": null,
                 "name": "id",
                 "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
-                "name": "updatedAt",
-                "storageKey": null
               }
             ],
             "storageKey": null
@@ -178,7 +162,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "mutation UpdateCardBalanceMutation(\n  $input: UpdateCardBalanceInput!\n) {\n  updateCardBalance(input: $input) {\n    card {\n      balance\n      id\n      updatedAt\n    }\n  }\n}\n"
+  "text": "mutation UpdateCardBalanceMutation(\n  $input: UpdateCardBalanceInput!\n) {\n  updateCardBalance(input: $input) {\n    card {\n      balance\n      id\n    }\n  }\n}\n"
 };
 
 module.exports = batch;
