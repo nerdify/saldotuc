@@ -2,10 +2,11 @@
   "homepage": "https://saldotuc.com",
   "private": true,
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "build": "NODE_PATH=src node scripts/build.js",
     "now-start": "serve -s build",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql",
     "start": "NODE_PATH=src node scripts/start.js",
-    "build": "NODE_PATH=src node scripts/build.js",
     "test": "NODE_PATH=src node scripts/test.js --env=jsdom"
   },
   "dependencies": {
@@ -60,6 +61,7 @@
     "react-error-overlay": "^1.0.8",
     "relay-compiler": "1.1.0",
     "relay-runtime": "1.1.0",
+    "source-map-explorer": "1.3.3",
     "style-loader": "0.18.2",
     "svg-prep": "1.0.4",
     "sw-precache-webpack-plugin": "0.11.3",
