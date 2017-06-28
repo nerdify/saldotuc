@@ -41,9 +41,9 @@ const {nodeField, nodeInterface} = nodeDefinitions(
 	},
 	obj => {
 		if (obj instanceof Card) {
-			return GraphQLCard;
+			return GraphQLCard; // eslint-disable-line no-use-before-define
 		} else if (obj instanceof User) {
-			return GraphQLUser;
+			return GraphQLUser; // eslint-disable-line no-use-before-define
 		}
 
 		return null;
@@ -175,7 +175,7 @@ const UpdateCardBalanceMutation = mutationWithClientMutationId({
 	name: 'UpdateCardBalance',
 	inputFields: {
 		cardId: {
-			description: 'The Node ID of the card object.',
+			description: 'The Card ID to update.',
 			type: new GraphQLNonNull(GraphQLID)
 		}
 	},
