@@ -1,5 +1,6 @@
+import { keyframes } from 'emotion'
+import styled from 'emotion/styled';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
 
 import image from './spinner.png';
 

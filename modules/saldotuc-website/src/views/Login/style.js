@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 import H1 from 'components/H1';
 
@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   padding: 20px 20px 40px;
 `;
 
-export const Title = H1.extend`
+export const Title = styled(H1)`
   text-align: center;
 `;
 

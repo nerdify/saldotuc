@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'emotion/styled';
 
 const H1 = styled.h1`
-  // margin-bottom: 0.25em;
   margin-top: 0;
   
   font-weight: 200;

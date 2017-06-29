@@ -1,5 +1,5 @@
+import styled from 'emotion/styled';
 import { Text } from 'react-form';
-import styled from 'styled-components';
 
 import BaseButton from 'components/Button';
 
@@ -10,31 +10,28 @@ export const Form = styled.form`
 
   background-color: #fff;
   border-radius: 4px;
-  
-  box-shadow: ${props => props.expanded ? `
-    0 0 0 1px rgba(136, 152, 170, .1), 0 15px 35px 0 rgba(49, 49, 93, .1), 0 5px 15px 0 rgba(0, 0, 0, .08);
-  ` : `
-    0 0px 2px rgba(0, 0, 0, .035);
-  `}
-  
+  box-shadow: 0 0px 2px rgba(0, 0, 0, .035);
+
+  &.expanded {
+    box-shadow: 0 0 0 1px rgba(136, 152, 170, .1), 0 15px 35px 0 rgba(49, 49, 93, .1), 0 5px 15px 0 rgba(0, 0, 0, .08);
+  }
+
   .FormInput {
     position: relative;
   }
-  
+
   .FormError {
     bottom: 2px;
     left: 16px;
     position: absolute;
-  
+
     font-size: 11px;
-  
+
     color: red;
   }
 `;
 
-export const IconButton = styled.button.attrs({
-  type: 'button'
-})`
+export const IconButton = styled.button`
   border: none;
   height: 56px;
   width: 56px;
@@ -62,7 +59,7 @@ export const WrapperHidden = styled.div`
   display: flex;
 
   overflow: hidden;
-  
+
   .FormInput {
     flex-grow: 1;
   }

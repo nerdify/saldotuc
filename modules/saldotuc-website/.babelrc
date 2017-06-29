@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "relay"
+    "relay",
+    ["emotion/babel", { "inline": true }]
   ],
   "presets": [
     "react-app"

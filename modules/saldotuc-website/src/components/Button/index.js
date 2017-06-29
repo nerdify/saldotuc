@@ -41,7 +41,7 @@ class Button extends PureComponent {
         className={className}
         {...rest}
       >
-        <Text waiting={waiting}>{children}</Text>
+        <Text className={waiting ? 'waiting' : ''}>{children}</Text>
         {spinner}
       </StyledButton>
     );

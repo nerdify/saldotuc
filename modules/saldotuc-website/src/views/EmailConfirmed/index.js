@@ -1,9 +1,10 @@
+import styled from 'emotion/styled';
 import React from 'react';
 
 import Container from 'components/Container';
 import H1 from 'components/H1';
 
-const Wrapper = Container.extend`
+const Wrapper = styled(Container)`
   max-width: 720px;
   
   text-align: center;

@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 import Container from 'components/Container';
 
-export const Wrapper = Container.withComponent('Header').extend`
+export const Wrapper = styled(Container)`
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 20px 0 !important;
 `;
 
 export const Link = styled.a`
@@ -17,12 +17,7 @@ export const Link = styled.a`
 
   color: #4285f4;
   text-decoration: none;
-  
-  :hover {
-    color: #4285f4;
-    text-decoration: none;
-  }
-  
+
   .home & {
     color: #fff;
   }

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 import Button from 'components/Button';
 
@@ -15,7 +15,7 @@ export const Name = styled.div`
 
 export const Meta = styled.div`
   align-items: center;
-  border-top: 1px solid #eff2f5; // #e0e6ec
+  border-top: 1px solid #eff2f5;
   display: flex;
   padding: 11px 15px;
 `;
@@ -37,11 +37,11 @@ export const Number = styled.div`
 export const Balance = styled.div`
   margin-left: auto;
 
-  color: #54545e; // #94949e
+  color: #54545e;
 `;
 
 export const ActionList = styled.div`
-  border-top: 1px solid #e0e6ec; // #d8dfe6; // #eef0ef;
+  border-top: 1px solid #e0e6ec;
   display: flex;
   justify-content: space-around;
 `;

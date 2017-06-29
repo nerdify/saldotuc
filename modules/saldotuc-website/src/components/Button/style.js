@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 export const Button = styled.button`
   position: relative;
@@ -17,8 +17,8 @@ export const Indicator = styled.div`
 `;
 
 export const Text = styled.span`
-  ${props => props.waiting && `
+  &.waiting {
     color: rgba(255, 255, 255, 0);
     opacity: 0;
-  `}
+  }
 `;

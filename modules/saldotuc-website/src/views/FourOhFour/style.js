@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 import Container from 'components/Container';
 import H1 from 'components/H1';
 
-export const Wrapper = Container.extend`
+export const Wrapper = styled(Container)`
   color: #fff;
   text-align: center;
 `;
 
-export const Title = H1.extend`
+export const Title = styled(H1)`
   margin-bottom: 0;
 
   font-size: 48px;

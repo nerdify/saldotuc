@@ -150,13 +150,14 @@ class CardForm extends PureComponent {
             {({ height, padding, rotate, scale, translateX }) => {
               return (
                 <Form
-                  expanded={expanded}
+                  className={expanded ? 'expanded' : ''}
                   onSubmit={submitForm}
                   style={{ transform: `scale(${scale})` }}
                 >
                   <IconButton
                     onClick={this.handleClose}
                     style={{ transform: `translateX(${translateX}px) rotate(${rotate}deg)` }}
+                    type="button"
                   >
                     <Icon name="add" size={32} />
                   </IconButton>

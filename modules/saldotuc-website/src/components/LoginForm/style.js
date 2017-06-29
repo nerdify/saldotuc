@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'emotion/styled';
 
 export const Form = styled.form`
   border-bottom: 1px solid #d8d8d8;
@@ -44,7 +44,7 @@ export const Input = styled.input`
 
   transition: border-bottom-color 100ms ease-in, color 100ms ease-in;
   
-  ::-webkit-input-placeholder {
+  &::-webkit-input-placeholder {
     color: #aaa;
   }
 `;
