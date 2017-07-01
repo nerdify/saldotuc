@@ -155,6 +155,7 @@ class CardForm extends PureComponent {
                   style={{ transform: `scale(${scale})` }}
                 >
                   <IconButton
+                    aria-label={expanded ? 'Minimizar formulario' : 'Maximizar formulario'}
                     onClick={this.handleClose}
                     style={{ transform: `translateX(${translateX}px) rotate(${rotate}deg)` }}
                     type="button"
