@@ -1,5 +1,5 @@
 import { keyframes } from 'emotion'
-import styled from 'emotion/styled';
+import styled from 'emotion/react';
 import PropTypes from 'prop-types';
 
 import image from './spinner.png';

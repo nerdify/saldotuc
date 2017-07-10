@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styled from 'emotion/styled';
+import styled from 'emotion/react';
 
 const Wrapper = styled.div`
   font-size: 11px;

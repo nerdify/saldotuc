@@ -1,4 +1,4 @@
-import styled from 'emotion/styled';
+import styled from 'emotion/react';
 
 import Container from 'components/Container';
 import H1 from 'components/H1';

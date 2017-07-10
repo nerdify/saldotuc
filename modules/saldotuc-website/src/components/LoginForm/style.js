@@ -1,4 +1,4 @@
-import styled from 'emotion/styled';
+import styled from 'emotion/react';
 
 export const Form = styled.form`
   border-bottom: 1px solid #d8d8d8;
