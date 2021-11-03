@@ -23,7 +23,7 @@
     "sanitize.css": "5.0.0",
     "serve": "6.0.2",
     "string.prototype.startswith": "0.2.0",
-    "validator": "8.0.0"
+    "validator": "13.7.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.2",
