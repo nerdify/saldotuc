@@ -13,7 +13,7 @@
     "graphql-relay": "0.5.2",
     "micro": "7.3.3",
     "micro-jwt-auth": "1.7.0",
-    "mongoose": "4.11.1",
+    "mongoose": "5.7.5",
     "raven": "2.1.0"
   },
   "devDependencies": {
